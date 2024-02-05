@@ -14,7 +14,7 @@ y = np.arange(0, size * dx, dx)
 z = np.arange(0, size * dx, dx)
 X, Y, Z = np.meshgrid(x, y, z)
 
-# 初始条件
+# 定义了一个初始条件表示波动的初始状态，使用高斯函数表示一个集中与空间中心的波源
 initial_condition = np.exp(-((X - size * dx / 2) ** 2 + (Y - size * dx / 2) ** 2 + (Z - size * dx / 2) ** 2))
 
 # 初始化波动场
@@ -23,7 +23,7 @@ wavefield_past = initial_condition.copy()
 wavefield_future = np.zeros_like(wavefield)
 
 
-# 进行一步波动方程的迭代
+# 进行一步波动方程的迭代（step_wave函数是一个用于进行波动方程迭代的函数。它使用有限差分方法计算下一时间步的波动场。这里的波动方程是三维的，包括二阶偏导数的 Laplacian 部分。）
 def step_wave(wavefield, wavefield_past, speed, dt, dx):
     # 使用有限差分方法计算下一时间步
     laplacian = (np.roll(wavefield, 1, axis=0) + np.roll(wavefield, -1, axis=0) +
