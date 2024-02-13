@@ -8,7 +8,6 @@ dx = 0.1  # 空间步长
 dt = 0.01  # 时间步长
 size = 50  # 空间网格大小
 
-# 创建空间网格
 x = np.arange(0, size * dx, dx)
 y = np.arange(0, size * dx, dx)
 z = np.arange(0, size * dx, dx)
