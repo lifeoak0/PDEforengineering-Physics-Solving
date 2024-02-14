@@ -53,5 +53,4 @@ ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.set_zlabel('Wave Amplitude')
 
-# 显示图形
 plt.show()
