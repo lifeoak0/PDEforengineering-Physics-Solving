@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-# 创建三维网格
+# 创建三维网格/
 n = 50
 U = np.zeros((n, n, n))
 source = np.zeros((n, n, n))
